@@ -1,26 +1,29 @@
 import { useState } from "react"
 
-export function UserProfile() {
-    const user = {
-        firstname: "Pranay",
-        lastname: "Solao",
-        age: 24,
-        gender: "male"
-    }
+export function UserProfile(val) {
+    // const users = {
+    //     firstname: "Pranay",
+    //     lastname: "Solao",
+    //     age: 24,
+    //     isadmit:true,
+    //     gender: "male"
 
-    const [isloading, setIsloading] = useState([user])
+    // }
+
+    // const [user, setUser] = useState([users])
     return (
         <div className="container-fluid">
             {
-                isloading.map(val => {
-                    return<div>
-                        <p>firstname: {val.firstname}</p>
-                        <p> lastname: {val.lastname}</p>
-                        <p>age: {val.age}</p>
-                        <p>gender: {val.gender}</p>
-                    </div>
-                })
-            }
+                <div>
+                    <p>firstname: {val.firstname}</p>
+                    <p>lastname: {val.lastname}</p>
+                    <p>age: {val.age}</p>
+                    <p>is admin :{val.isadmin ? "I am admin" : "I am not admit"}</p>
+                   {val.isadmin && <p>gender:{val.gender}</p> }
+                   <hr></hr>
+                </div>}
+
+            
         </div>
     )
 }
