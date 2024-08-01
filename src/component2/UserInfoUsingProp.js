@@ -1,7 +1,8 @@
+import { useState } from "react"
 import { UserProfile } from "./userprofile"
 
 export function UserInfoUsingProp() {
-    const Userinfo = [
+    const [Userinfo,setUserInfo] =useState([
         {
             id:1,
             firstname: "Yahsjeet",
@@ -34,13 +35,26 @@ export function UserInfoUsingProp() {
             gender: "male",
             isadmin: true
         },
-    ]
+    ])
+
+    function OnDelete(id){
+        alert("Are you want to be delete")
+        const filteruser=Userinfo.filter(user=>user.id !=id)
+        // Userinfo.splice(id,5)
+        setUserInfo([...filteruser])
+    }
     return (
         <div className="container-fluid">
           {
             Userinfo.map(val2=>{
                 return <div>
-                    <UserProfile firstname={val2.firstname} lastname={val2.lastname} age={val2.age}  isadmin={val2.isadmin} gender={val2.gender}/>
+                    <UserProfile onDelete={()=>{
+                        OnDelete(val2.id)
+                       }
+                } firstname={val2.firstname} lastname={val2.lastname} age={val2.age}  isadmin={val2.isadmin} gender={val2.gender}
+                   
+                    />
+
                 </div>
             })
           }

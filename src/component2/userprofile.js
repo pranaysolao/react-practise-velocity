@@ -20,6 +20,7 @@ export function UserProfile(val) {
                     <p>age: {val.age}</p>
                     <p>is admin :{val.isadmin ? "I am admin" : "I am not admit"}</p>
                    {val.isadmin && <p>gender:{val.gender}</p> }
+                   <button onClick={val.onDelete}>Delete</button>
                    <hr></hr>
                 </div>}
 

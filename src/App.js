@@ -20,9 +20,9 @@ function App(prop) {
       {/* <Counter/> */}
       {/* <Demo5 /> */}
       {/* <UserProfile /> */}
-      {/* <UserInfoUsingProp /> */}
-      <FormTemplate title="UserCredential" name="UserId123" button="Login" />
-      <FormTemplate title="Admin credential" name="Admin Id" button="Admin Login" />
+      <UserInfoUsingProp />
+      {/* <FormTemplate title="UserCredential" name="UserId123" button="Login" />
+      <FormTemplate title="Admin credential" name="Admin Id" button="Admin Login" /> */}
     </div>
 
 
